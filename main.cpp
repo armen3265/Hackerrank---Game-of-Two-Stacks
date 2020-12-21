@@ -11,10 +11,7 @@ int twoStacks(int x, vector<int> a, vector<int> b) {
         /*
      * Write your code here.
      */
-        /*
-     * Write your code here.
-     */
-        int a_size = a.size();
+    int a_size = a.size();
     int b_size = b.size();
 
     int i = 0, j = 0;
@@ -25,7 +22,15 @@ int twoStacks(int x, vector<int> a, vector<int> b) {
         sum += a[i];
         i++;
     }
-    int count = i - 1;
+    int count = 0;
+    if(sum <= x)
+    {
+        count = i;
+    }
+    else
+    {
+        count = i - 1;            
+    }
     while (j < b_size && i >= 0)
     {
         sum += b[j];
